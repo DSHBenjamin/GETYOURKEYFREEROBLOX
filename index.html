@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="th">
+< >
+  <meta charset="UTF-8">
+  <title>Dshvideolink Single Page</title>
+  <style>
+    body {
+      margin: 0;
+      background: #ffffff;
+      font-family: 'sans-serif';
+      padding: 20px;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .cover {
+      display: flex;
+      align-items: center;
+      background: #f0f0f0;
+      border-radius: 15px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .cover:hover {
+      background: #e0e0e0;
+    }
+    .cover img {
+      width: 120px;
+      height: auto;
+      border-radius: 15px 0 0 15px;
+    }
+    .cover span {
+      padding: 0 20px;
+      font-size: 20px;
+    }
+    .video-section {
+      display: none;
+      margin-top: 20px;
+      text-align: center;
+    }
+    .video-section h2 {
+      margin-bottom: 15px;
+    }
+    .btn {
+      padding: 10px 20px;
+      background: #2196F3;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 18px;
+      text-decoration: none;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container" id="main">
+  <div class="cover" onclick="openVideo(1)">
+    <img src="https://files.catbox.moe/rfnn6q.jpg">
+    <span>เบื้องหลังงับ </span>
+  </div>
+  <div class="cover" onclick="openVideo(2)">
+    <img src="https://files.catbox.moe/4bw730.jpg">
+    <span>คลิปต้นฉบับ (มีเสียงเพลง!)</span>
+  </div>
+</div>
+
+<div class="video-section" id="video1">
+  <h2>วิดีโอ 1</h2>
+  <a class="btn" href="https://drive.google.com/file/d/1j7M4xcchhcAGrMoLaLzzoxUZy7zqt6Ey/view?usp=drivesdk" target="_blank">▶️ เปิดวิดีโอ</a>
+  <br>
+  <button class="btn" onclick="backToMain()">ย้อนกลับ</button>
+</div>
+
+<div class="video-section" id="video2">
+  <h2>วิดีโอ 2</h2>
+  <a class="btn" href="https://drive.google.com/file/d/1j68gMp1x0EjJJXdUVJdhJX1T8qwMz84R/view?usp=drivesdk" target="_blank">▶️ เปิดวิดีโอ</a>
+  <br>
+  <button class="btn" onclick="backToMain()">ย้อนกลับ</button>
+</div>
+
+<script>
+  function openVideo(number) {
+    document.getElementById("main").style.display = "none";
+    document.getElementById("video1").style.display = "none";
+    document.getElementById("video2").style.display = "none";
+    document.getElementById("video" + number).style.display = "block";
+  }
+
+  function backToMain() {
+    document.getElementById("main").style.display = "flex";
+    document.getElementById("video1").style.display = "none";
+    document.getElementById("video2").style.display = "none";
+  }
+</script>
+
+</body>
+</html>
